@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misiones Medievales - Gremio</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header class="cabeceraPrincipal">
+        <h1>Tablón de Misiones del Gremio</h1>
+    </header>
+
+    <main class="contenedorPrincipal">
+        <!-- SECCIÓN 1: PERFIL -->
+        <section class="seccionPerfil">
+            <h2 class="tituloSeccion">Registro de Aventurero</h2>
+            
+            <div class="tarjetaPerfil">
+                <!-- Zona de Avatar -->
+                <div id="zonaAvatar" class="zonaAvatar">
+                    <p id="textoAvatar">Arrastra tu foto o haz click</p>
+                    <img id="vistaPreviaAvatar" class="vistaPreviaOculta vistaPreviaAvatar" src="#" alt="Tu Avatar">
+                    <!-- Input oculto para accesibilidad / Mobile -->
+                    <input type="file" id="inputArchivo" class="inputArchivoOculto" accept="image/*">
+                </div>
+
+                <!-- Formulario -->
+                <form class="formularioRegistro" id="formularioRegistro">
+                    <div class="grupoControl">
+                        <label for="nombreAventurero">Nombre del Aventurero:</label>
+                        <input type="text" id="nombreAventurero" name="nombreAventurero" class="inputTexto" placeholder="Ej. Beric Dondarrion">
+                    </div>
+
+                    <div class="grupoControl">
+                        <label for="rangoAventurero">Rango en el Gremio:</label>
+                        <select id="rangoAventurero" class="selectorRango" name="rangoAventurero">
+                            <option value="novato">Novato (Bronce)</option>
+                            <option value="explorador">Explorador (Plata)</option>
+                            <option value="maestro">Maestro (Oro)</option>
+                        </select>
+                    </div>
+
+                    <button id="botonGuardarPerfil" class="botonGremio">Inscribirse en el Gremio</button>
+                </form>
+            </div>
+            <p id="mensajeEstado" class="mensajeEstado"></p>
+        </section>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
