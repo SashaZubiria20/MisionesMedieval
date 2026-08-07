@@ -47,8 +47,48 @@
             </div>
             <p id="mensajeEstado" class="mensajeEstado"></p>
         </section>
+
+
+
+        <!-- SECCIÓN 2: TABLÓN DE MISIONES -->
+<section class="seccionMisiones">
+    <h2 class="tituloSeccion">Tablón de Anuncios</h2>
+
+    <!-- Formulario para Nueva Misión -->
+    <div class="tarjetaMisiones">
+        <form id="formularioMisiones" class="formularioMisiones">
+            <div class="grupoControl">
+                <label for="tituloMision">Nombre de la Misión:</label>
+                <input type="text" id="tituloMision" name="tituloMision" class="inputTexto" placeholder="Ej. Derrotar al Dragón de JS" required>
+            </div>
+
+            <div class="grupoControl">
+                <label for="descripcionMision">Descripción (Detalles de la aventura):</label>
+                <textarea id="descripcionMision" name="descripcionMision" class="inputArea" rows="3" placeholder="Describe los peligros..." required></textarea>
+            </div>
+
+            <div class="grupoControl">
+                <label for="dificultadMision">Nivel de Peligro:</label>
+                <select id="dificultadMision" name="dificultadMision" class="selectorRango">
+                    <option value="facil">Fácil (E-Rank)</option>
+                    <option value="intermedia">Intermedia (C-Rank)</option>
+                    <option value="dificil">Difícil (A-Rank)</option>
+                    <option value="epica">Épica (S-Rank)</option>
+                </select>
+            </div>
+
+            <button type="submit" id="botonNuevaMision" class="botonGremio">Publicar Misión</button>
+        </form>
+    </div>
+
+    <!-- Contenedor donde aparecerán las misiones -->
+    <div id="contenedorMisiones" class="contenedorMisiones">
+        <!-- Las misiones se generarán aca -->
+    </div>
+</section>
     </main>
 
     <script src="./js/main.js"></script>
+    <script src="./js/misiones.js"></script>
 </body>
 </html>

@@ -3,13 +3,14 @@ const avatar = document.getElementById('zonaAvatar');
 const avatarOculto = document.getElementById('inputArchivo');
 const imgAvatar = document.getElementById('vistaPreviaAvatar');
 const txt = document.getElementById('textoAvatar');
-/*
-const nombre = document.getElementById('nombreAventurero');
-const rango = document.getElementById('rangoAventurero');
-*/
+
 const form = document.getElementById('formularioRegistro');
 const mensaje = document.getElementById('mensajeEstado');
 
+
+/*
+SECCIÓN 1: PERFIL
+*/
 avatar.addEventListener('click', () => {
     avatarOculto.click()
 });
