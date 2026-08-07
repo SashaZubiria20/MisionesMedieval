@@ -58,3 +58,16 @@ form.addEventListener('submit', (e) => {
     mensaje.classList.remove('mensajeEstadoError');
     mensaje.classList.add('mensajeEstado');
 });
+
+
+addEventListener('load', () => {
+    const datosGuardados = localStorage.getItem('usuario');
+    if(datosGuardados !== null){
+        const datos = JSON.parse(datosGuardados);
+        form.nombreAventurero.value = datos.nombre;
+        form.rangoAventurero.value = datos.rango;
+        imgAvatar.src = datos.img;
+        imgAvatar.classList.remove('vistaPreviaOculta');
+        txt.textContent = '';
+    }
+});
