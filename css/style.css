@@ -116,7 +116,7 @@ SECCIÓN 1: PERFIL
     font-style: italic;
     color: #f40101;
 }
-
+/*************************************************/
 
 
 /*
@@ -157,7 +157,7 @@ SECCIÓN 2: TABLÓN DE MISIONES
     margin-top: 20px;
 }
 
-/* Estilos para las tarjetas de misiones que crearemos luego */
+/* Estilos para las tarjetas de misiones */
 .tarjetaMisionIndividual {
     background: linear-gradient(145deg, #252525, #1a1a1a);
     border-left: 5px solid #d4af37;
@@ -176,3 +176,69 @@ SECCIÓN 2: TABLÓN DE MISIONES
     line-height: 1.4;
     color: #ccc;
 }
+
+.nivelMision {
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin-top: 10px;
+    border-top: 1px solid #444;
+    padding-top: 5px;
+}
+
+.bordeFacil { border-left: 5px solid #2ecc71; }
+.bordeIntermedia { border-left: 5px solid #3498db; }
+.bordeDificil { border-left: 5px solid #e67e22; }
+.bordeEpica { border-left: 5px solid #9b59b6; }
+
+/* Estilos del boton eliminar mision */
+.botonEliminarMision {
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #d4af37;
+    padding: 5px 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.botonEliminarMision:hover {
+    background-color: #8b0000;
+}
+
+/* Estilos del boton editar mision */
+.botonEditarMision {
+    background-color: #d4af37;
+    color: #1a1a1a;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+}
+
+.botonEditarMision:hover {
+    background-color: #f1c40f;
+}
+
+/* Estilos de mensajes */
+
+.mensajeVacio {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background-color: #2b2b2b;
+    border: 1px dashed #d4af37;
+    color: #888;
+    font-style: italic;
+}
+/*************************************************/
