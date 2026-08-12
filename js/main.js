@@ -1,4 +1,7 @@
 
+/*
+SECCIÓN 1: PERFIL
+*/
 const avatar = document.getElementById('zonaAvatar');
 const avatarOculto = document.getElementById('inputArchivo');
 const imgAvatar = document.getElementById('vistaPreviaAvatar');
@@ -6,6 +9,12 @@ const txt = document.getElementById('textoAvatar');
 
 const form = document.getElementById('formularioRegistro');
 const mensaje = document.getElementById('mensajeEstado');
+
+
+/*
+SECCIÓN 3: LOCALIZACIÓN
+*/
+const textoUbicacion = document.getElementById('textoUbicacion');
 
 
 /*
@@ -61,7 +70,7 @@ form.addEventListener('submit', (e) => {
 });
 
 
-addEventListener('load', () => {
+window.addEventListener('load', () => {
     const datosGuardados = localStorage.getItem('usuario');
     if(datosGuardados !== null){
         const datos = JSON.parse(datosGuardados);
@@ -71,4 +80,32 @@ addEventListener('load', () => {
         imgAvatar.classList.remove('vistaPreviaOculta');
         txt.textContent = '';
     }
+});
+
+
+
+/*
+SECCIÓN 3: LOCALIZACIÓN
+*/
+
+const opciones = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximunAge: 0
+};
+
+const obtenerPosicion = (posicion) => {
+    const lat = posicion.coords.latitude;
+    const long = posicion.coords.longitude;
+    textoUbicacion.textContent = `Latitud: ${lat.toFixed(4)} Longitud: ${long.toFixed(4)}`;
+};
+
+const errorPosicion = (error) => {
+    textoUbicacion.textContent = 'Ubicación no disponible';
+};
+
+window.addEventListener('load', () => {
+    const geo = navigator.geolocation;
+
+    geo.getCurrentPosition(obtenerPosicion, errorPosicion, opciones)
 });

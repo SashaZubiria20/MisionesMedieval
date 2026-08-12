@@ -242,3 +242,30 @@ SECCIÓN 2: TABLÓN DE MISIONES
     font-style: italic;
 }
 /*************************************************/
+
+
+/*
+SECCIÓN 3: LOCALIZACIÓN
+*/
+
+.contenedorUbicacion {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #1f1f1f;
+    border-radius: 4px;
+    border-left: 3px solid #d4af37;
+    font-size: 0.85rem;
+}
+
+.etiquetaUbicacion {
+    font-weight: bold;
+    color: #d4af37;
+    margin-right: 5px;
+}
+
+.textoUbicacion {
+    color: #aaa;
+    font-style: italic;
+}
+
+/*************************************************/
