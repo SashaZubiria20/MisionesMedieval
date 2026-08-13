@@ -267,5 +267,34 @@ SECCIÓN 3: LOCALIZACIÓN
     color: #aaa;
     font-style: italic;
 }
-
 /*************************************************/
+
+/*
+SECCIÓN 4: Online/Offline
+*/
+
+.alertaConexion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
+}
+
+.conexionPerdida {
+    background-color: #8b0000;
+    color: white;
+}
+
+.conexionRestaurada {
+    background-color: #2ecc71;
+    color: #1a1a1a;
+}
+
+.ocultarAlerta {
+    transform: translateY(-100%);
+}

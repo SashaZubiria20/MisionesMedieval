@@ -16,7 +16,15 @@ SECCIÓN 3: LOCALIZACIÓN
 */
 const textoUbicacion = document.getElementById('textoUbicacion');
 
+/*
+SECCIÓN 4: Online/Offline
+*/
+const alerta = document.getElementById('alertaConexion');
+const textoAlerta = document.getElementById('textoAlertaConexion');
 
+
+
+/****************************************/
 /*
 SECCIÓN 1: PERFIL
 */
@@ -83,7 +91,6 @@ window.addEventListener('load', () => {
 });
 
 
-
 /*
 SECCIÓN 3: LOCALIZACIÓN
 */
@@ -108,4 +115,26 @@ window.addEventListener('load', () => {
     const geo = navigator.geolocation;
 
     geo.getCurrentPosition(obtenerPosicion, errorPosicion, opciones)
+});
+
+
+/*
+SECCIÓN 4: Online/Offline
+*/
+
+window.addEventListener('online', (e) => {
+    alerta.classList.remove('ocultarAlerta');
+    alerta.classList.remove('conexionPerdida');
+    alerta.classList.add('conexionRestaurada');
+    textoAlerta.textContent = 'Conexión restaurada! Sincronizando con el Gremio...';
+    setTimeout(() => {
+        alerta.classList.add('ocultarAlerta');
+    }, 2000);
+});
+
+window.addEventListener('offline', (e) => {
+    alerta.classList.remove('ocultarAlerta');
+    alerta.classList.remove('conexionRestaurada');
+    alerta.classList.add('conexionPerdida');
+    textoAlerta.textContent = 'Conexión perdida! Estás operando en modo local';
 });
