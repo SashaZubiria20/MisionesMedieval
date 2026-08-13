@@ -20,6 +20,25 @@ let db;
 //
 let idEdicion = null;
 
+/*
+SECCIÓN 5: Visibility Change
+*/
+
+const aparecerTarjetas = (entradas) => {
+    entradas.forEach(entrada => {
+        if(entrada.isIntersecting){
+            entrada.target.classList.add('tarjetaVisible');
+            entrada.target.classList.remove('tarjetaOculta');
+
+            observadorMisiones.unobserve(entrada.target);
+        }
+    });
+}
+
+const observadorMisiones = new IntersectionObserver(aparecerTarjetas, {threshold: 0.1});
+/*********************************************************************************/
+
+
 if (indexedDB && formMisiones) {
     const solicitud = indexedDB.open('MisionesMedievales',1);
 
@@ -78,7 +97,7 @@ if (indexedDB && formMisiones) {
                 const mision = cursor.value;
 
                 const tarjeta = document.createElement('DIV');
-                tarjeta.classList.add('tarjetaMisionIndividual');
+                tarjeta.classList.add('tarjetaMisionIndividual', 'tarjetaOculta');
                 switch (mision.nivel) {
                     case 'facil':
                     tarjeta.classList.add('bordeFacil');
@@ -93,6 +112,7 @@ if (indexedDB && formMisiones) {
                     tarjeta.classList.add('bordeEpica');
                     break;
                 };
+                observadorMisiones.observe(tarjeta);
 
                 const titulo = document.createElement('H3');
                 titulo.textContent = mision.mision;

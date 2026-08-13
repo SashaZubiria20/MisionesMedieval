@@ -298,3 +298,21 @@ SECCIÓN 4: Online/Offline
 .ocultarAlerta {
     transform: translateY(-100%);
 }
+/*************************************************/
+
+/*
+SECCIÓN 5: Visibility Change
+*/
+
+/* Estado inicial: La tarjeta es invisible y está un poco más abajo */
+.tarjetaOculta {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+/* Estado final: La tarjeta se vuelve visible y sube a su posición original */
+.tarjetaVisible {
+    opacity: 1;
+    transform: translateY(0);
+}
